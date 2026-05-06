@@ -1,7 +1,8 @@
 module Library where
 import PdePreludat
 
-data Posta = Posta{ alto:: Number, largo::Number, nivel::String, pais="Argentina"} deriving(Show)
+
+data Posta = Posta{ alto:: Number, largo::Number, nivel::String, pais::String} deriving(Show)
 type Atleta= Posta -> Vistas
 type Vistas = Number
 type Chiste=(String,Number)
@@ -56,7 +57,7 @@ filterPataDeRana = filter tienePataDeRana
 -------------------------------------
 type Evento :: [Posta]
 base:: Posta
-base= Posta 0 0 "Facil"
+base= Posta 0 0 "Facil" "Argentina"
 conAlto:: Number->Posta->Posta
 conAlto alto posta = posta{alto=alto}
 conLargo::Number->Posta->Posta
